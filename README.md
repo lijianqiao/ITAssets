@@ -21,7 +21,7 @@ IT资产管理平台是一个使用Django框架开发的Web应用，用于管理
 ## 如何运行
 
 1. 克隆项目到本地, 请将`ITAssets/.env.example`文件重命名为`.env`
-2. 请在`ITAssets/`项目目录下创建`media`和`static`目录
+2. 在`ITAssets/`项目目录下创建`media`和`static`目录
 3. 安装依赖：`pip install -r requirements.txt`
 4. 修改`ITAssets/.env`中的配置
 5. 运行迁移：`python manage.py makemigrations` `python manage.py migrate`
