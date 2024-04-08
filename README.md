@@ -24,10 +24,11 @@ IT资产管理平台是一个使用Django框架开发的Web应用，用于管理
 2. 在`ITAssets/`项目目录下创建`media`和`static`目录
 3. 安装依赖：`pip install -r requirements.txt`
 4. 修改`ITAssets/.env`中的配置
-5. 运行迁移：`python manage.py makemigrations` `python manage.py migrate`
-6. 创建超级用户：`python manage.py createsuperuser`
-7. 运行服务器：`python manage.py runserver`
-8. 打开浏览器，访问：`http://localhost:8020/admin`
+5. 生成静态文件：`python manage.py collectstatic`
+6. 运行迁移：`python manage.py makemigrations` `python manage.py migrate`
+7. 创建超级用户：`python manage.py createsuperuser`
+8. 运行服务器：`python manage.py runserver`
+9. 打开浏览器，访问：`http://localhost:8020/admin`
 
 ## 项目结构
 
