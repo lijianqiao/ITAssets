@@ -1,0 +1,9 @@
+Django==5.0.3
+django_auditlog==2.3.0
+django-simpleui==2024.3.25
+mysqlclient==2.2.4
+qrcode==7.4.2
+django-cors-headers==4.3.1
+django-import-export==3.3.7
+pandas==2.2.1
+pyecharts==2.0.5
