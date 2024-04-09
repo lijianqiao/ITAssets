@@ -30,6 +30,7 @@ class AssetsResource(resources.ModelResource):
                           widget=DateWidget(format='%Y/%m/%d'))
     name = Field(column_name=_('资产名称'), attribute='name')
     sn = Field(column_name=_('资产编号'), attribute='sn')
+    asset_location = Field(column_name=_('资产位置'), attribute='asset_location')
     expire_date = Field(column_name=_('过保期限(月份)'), attribute='expire_date')
     price = Field(column_name=_('价格'), attribute='price')
     repair_count = Field(column_name=_('维修次数'), attribute='repair_count')
@@ -73,7 +74,7 @@ class AssetsResource(resources.ModelResource):
         else:
             row['price'] = 0
 
-        asset_type_display = row.get(_('资产类型'))
+        asset_type_display = row.get(_('资产类型')) or row.get('asset_type')
         if asset_type_display:
             for code, asset_type in Assets.ASSET_TYPE:
                 if asset_type == asset_type_display:
@@ -82,9 +83,9 @@ class AssetsResource(resources.ModelResource):
             else:
                 raise ValidationError(f"无效的资产类型: {asset_type_display}")
         else:
-            raise ValidationError("资产类型不能为空")
+            raise ValidationError(_("资产类型不能为空"))
 
-        status_display = row.get(_('状态'))
+        status_display = row.get(_('状态')) or row.get('status')
         if status_display:
             for code, status in Assets.ASSET_STATUS:
                 if status == status_display:
@@ -95,7 +96,7 @@ class AssetsResource(resources.ModelResource):
         else:
             raise ValidationError("状态不能为空")
 
-        is_active_display = row.get(_('是否启用'))
+        is_active_display = row.get(_('是否启用')) or row.get('is_active')
         is_active_dict = {_('是'): True, _('否'): False}
         if is_active_display in is_active_dict.keys():
             row['is_active'] = is_active_dict[is_active_display]
@@ -135,10 +136,8 @@ class RepairRecordResource(resources.ModelResource):
     fault_description = Field(attribute='fault_description', column_name=_('故障描述'))
     supplier = Field(attribute='supplier', column_name=_('维修供应商'),
                      widget=ForeignKeyWidget(Supplier, 'name'))
-    # repair_type = Field(attribute='repair_type', column_name=_('维修类别'))
     spare_part = Field(attribute='spare_part', column_name=_('维修备件'),
                        widget=ManyToManyWidget(SparePart, separator='|', field='sn'))
-    # repair_status = Field(attribute='repair_status', column_name=_('维修状态'))
     repair_start_time = Field(attribute='repair_start_time', column_name=_('维修开始时间'),
                               widget=DateWidget(format='%Y/%m/%d %H:%M:%S'))
     repair_duration = Field(attribute='repair_duration', column_name=_('维修持续周期'))

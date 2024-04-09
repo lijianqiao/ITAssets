@@ -1,6 +1,5 @@
 from django.db import models
 from django.http import HttpResponse
-from pyecharts.charts import Sunburst
 from pyecharts import options as opts
 
 from assets.models import Assetsmanager
