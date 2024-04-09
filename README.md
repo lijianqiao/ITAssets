@@ -43,16 +43,16 @@ IT资产管理平台是一个使用Django框架开发的Web应用，用于管理
 # 项目展示
 
 - 主页
-  ![main.png](\doc\main.png)
+  ![main.png](doc/main.png)
 - 资产信息及图表
-  ![assets_list.png](\doc\assets_list.png)
-  ![assets_img.png](\doc\assets_img.png)
+  ![assets_list.png](doc/assets_list.png)
+  ![assets_img.png](doc/assets_img.png)
 - 维修信息及图表
-  ![repair_list.png](\doc\repair_list.png)
-  ![repair_img_supplier.png](\doc\repair_img_supplier.png)
-  ![repair_img_deparment.png](\doc\repair_img_deparment.png)
+  ![repair_list.png](doc/repair_list.png)
+  ![repair_img_supplier.png](doc/repair_img_supplier.png)
+  ![repair_img_deparment.png](doc/repair_img_deparment.png)
 - 日志
-  ![log.png](\doc\log.png)
+  ![log.png](doc/log.png)
 
 ## 联系方式
 
