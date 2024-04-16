@@ -7,3 +7,4 @@ django-cors-headers==4.3.1
 django-import-export==3.3.7
 pandas==2.2.1
 pyecharts==2.0.5
+python-dotenv
